@@ -2,6 +2,6 @@
   "name": "apidoc-plugin-blisstribute",
   "version": "1.0.0",
   "dependencies": {
-    
+    "fs-extra": "^3.0.1"
   }
 }
