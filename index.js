@@ -2,6 +2,7 @@ let fs     = require('fs-extra');
 let app = {};
 
 const parse = (content, src) => {
+  console.log(app, content, src);
   let destinationPath = app.options.dest + content;
   let schemaFile = app.options.jsonSchemaPath + content;
   fs.copySync(schemaFile, destinationPath);
