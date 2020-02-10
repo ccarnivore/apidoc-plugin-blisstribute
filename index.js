@@ -1,11 +1,13 @@
-let fs     = require('fs-extra');
+const fs = require('fs');
 let app = {};
 
 const parse = (content, src) => {
-  console.log(app, content, src);
-  let destinationPath = app.options.dest + content;
-  let schemaFile = app.options.jsonSchemaPath + content;
-  fs.copySync(schemaFile, destinationPath);
+  const destinationPath = app.options.dest + content;
+  const schemaFile = app.options.jsonSchemaPath + content;
+
+  fs.copyFileSync(schemaFile, destinationPath).then(() => {
+    console.log(content + ' successfully copied')
+  });
 
   return { schema: content }
 };
