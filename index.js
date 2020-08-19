@@ -3,11 +3,12 @@ let app = {};
 
 const parse = (content, src) => {
   const destinationPath = app.options.dest + content;
-  const schemaFile = app.options.jsonSchemaPath + content;
+  app.log.verbose('destinationPath: ' + destinationPath);
 
-  fs.copyFileSync(schemaFile, destinationPath).then(() => {
-    console.log(content + ' successfully copied')
-  });
+  const schemaFile = app.options.jsonSchemaPath + content;
+  app.log.verbose('schemaFile: ' + schemaFile);
+
+  fs.copyFileSync(schemaFile, destinationPath);
 
   return { schema: content }
 };
