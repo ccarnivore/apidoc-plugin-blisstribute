@@ -17,7 +17,7 @@ module.exports = {
 
     app.parsers.apivalidationschema = {
       parse     : parse,
-      path      : 'global',
+      path      : 'local',
       method    : 'insert'
     };
   }
