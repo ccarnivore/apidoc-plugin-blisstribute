@@ -15,7 +15,7 @@ module.exports = {
   init: function(_app) {
     app = _app;
 
-    app.parsers.apischemavalidation = {
+    app.parsers.apivalidationschema = {
       parse     : parse,
       path      : 'global',
       method    : 'insert'
